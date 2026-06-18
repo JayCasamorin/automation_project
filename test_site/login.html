@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Local Login Page</title>
+</head>
+<body>
+    <h1>Login Page</h1>
+
+    <label for="username">Username:</label>
+    <input id="username" name="username" type="text">
+
+    <br><br>
+
+    <label for="password">Password:</label>
+    <input id="password" name="password" type="password">
+
+    <br><br>
+
+    <button id="loginButton" onclick="login()">login</button>
+
+    <p id="message"></p>
+
+    <script>
+        function login() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const message = document.getElementById("message");
+
+            if (username == "admin" && password == "admin1234") {
+                message.innerText = "LOGIN SUCCESS";
+                message.style.color = "green";
+            } else {
+                message.innerText = "LOGIN FAILED";
+                message.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
