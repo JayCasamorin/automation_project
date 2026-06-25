@@ -41,3 +41,28 @@ class BasePage:
     def get_text(self, locator, timeout=10):
         element = self.find_element(locator, timeout)
         return element.text
+    
+    def get_css_property(self, locator, property_name, timeout=10):
+        element = self.find_element(locator, timeout)
+        return element.value_of_css_property(property_name)
+    
+    def is_element_displayed(self, locator, timeout=10):
+        element = self.find_element(locator, timeout)
+        return element.is_displayed()
+    
+    def is_element_enabled(self, locator, timeout=10):
+        element = self.find_element(locator, timeout)
+        return element.is_enabled()
+    
+    def get_attribute(self, locator, attribute_name, timeout=10):
+        element = self.find_element(locator, timeout)
+        return element.get_attribute(attribute_name)
+    
+    def find_present_element(self, locator, timeout=10):
+        return WebDriverWait(self.browser, timeout).until(
+            EC.presence_of_element_located(locator)
+        )
+    
+    def get_text_from_present_element(self, locator, timeout=10):
+        element = self.find_present_element(locator, timeout)
+        return element.text

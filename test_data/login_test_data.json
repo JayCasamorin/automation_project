@@ -1,0 +1,44 @@
+[
+    {
+        "id": "TC_LOGIN_001_valid_credentials",
+        "username": "admin",
+        "password": "admin1234",
+        "expected_message": "LOGIN SUCCESS",
+        "expected_color": "rgba(0, 128, 0, 1)"
+    },
+    {
+        "id": "TC_LOGIN_002_invalid_password",
+        "username": "admin",
+        "password": "wrongpass",
+        "expected_message": "Invalid username or password",
+        "expected_color": "rgba(255, 0, 0, 1)"
+    },
+    {
+        "id": "TC_LOGIN_003_invalid_username",
+        "username": "wronguser",
+        "password": "admin1234",
+        "expected_message": "Invalid username or password",
+        "expected_color": "rgba(255, 0, 0, 1)"
+    },
+    {
+        "id": "TC_LOGIN_004_blank_username",
+        "username": "",
+        "password": "admin1234",
+        "expected_message": "Username is required",
+        "expected_color": "rgba(255, 0, 0, 1)"
+    },
+    {
+        "id": "TC_LOGIN_005_blank_password",
+        "username": "admin",
+        "password": "",
+        "expected_message": "Password is required",
+        "expected_color": "rgba(255, 0, 0, 1)"
+    },
+    {
+        "id": "TC_LOGIN_005_blank_username_and_password",
+        "username": "",
+        "password": "",
+        "expected_message": "Username is required",
+        "expected_color": "rgba(255, 0, 0, 1)"
+    }
+]

@@ -26,11 +26,17 @@
             const password = document.getElementById("password").value;
             const message = document.getElementById("message");
 
-            if (username == "admin" && password == "admin1234") {
+            if (username === "") {
+                message.innerText = "Username is required";
+                message.style.color = "red";
+            } else if (password === "") {
+                message.innerText = "Password is required";
+                message.style.color = "red";
+            } else if (username === "admin" && password === "admin1234") {
                 message.innerText = "LOGIN SUCCESS";
                 message.style.color = "green";
             } else {
-                message.innerText = "LOGIN FAILED";
+                message.innerText = "Invalid username or password";
                 message.style.color = "red";
             }
         }
